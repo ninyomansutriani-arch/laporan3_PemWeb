@@ -1,0 +1,124 @@
+/* =============================================
+   style.css - Global Styles
+   Nama: Ni Nyoman Sutriani | NIM: 202432037 
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;600&display=swap');
+
+:root {
+  --green-light:  #a8edca;
+  --green-mid:    #5dd9a0;
+  --green-dark:   #28b47a;
+  --green-deeper: #1a8a5c;
+
+  --pink-light:   #ffd6e8;
+  --pink-mid:     #ff8fbf;
+  --pink-dark:    #e85fa0;
+  --pink-deeper:  #c0396e;
+
+  --white:      #ffffff;
+  --off-white:  #f5fdf9;
+  --text-dark:  #1e2d28;
+  --text-muted: #6b8c7a;
+  --border:     #d4f0e3;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow:    0 2px 12px rgba(40,180,122,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--off-white);
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 60px;
+  background: var(--white);
+  border-bottom: 2px solid var(--green-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-shadow: var(--shadow);
+}
+
+.nav-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--green-dark), var(--pink-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-links { display: flex; gap: 6px; list-style: none; }
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  padding: 7px 16px;
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+
+.nav-links a:hover { color: var(--green-dark); background: var(--green-light); }
+
+.nav-links a.active {
+  color: var(--white);
+  background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+}
+
+/* CONTAINER */
+.container { max-width: 800px; margin: 0 auto; padding: 36px 24px 60px; }
+
+/* CARD */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  border: 1.5px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(40,180,122,0.15); }
+
+.card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title::before {
+  content: '';
+  width: 4px; height: 14px;
+  background: linear-gradient(to bottom, var(--green-dark), var(--pink-dark));
+  border-radius: 2px;
+}
+
+@media (max-width: 500px) {
+  nav { padding: 0 16px; }
+  .container { padding: 20px 14px 48px; }
+  .card { padding: 18px 16px; }
+  .nav-links a { padding: 6px 12px; font-size: 0.82rem; }
+}

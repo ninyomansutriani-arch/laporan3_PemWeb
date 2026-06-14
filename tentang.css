@@ -1,0 +1,131 @@
+/* =============================================
+   tentang.css - Halaman Tentang Saya
+   Nama: Ni Nyoman Sutriani | NIM: 202432037
+   ============================================= */
+
+.hero-card {
+  background: linear-gradient(135deg, #edfff6, #fff0f7);
+  border: 1.5px solid var(--green-light);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.profile-avatar,
+.avatar-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 3px var(--green-mid);
+  margin-bottom: 6px;
+  transition: all 0.2s;
+}
+
+.profile-avatar { object-fit: cover; }
+
+.avatar-placeholder {
+  background: linear-gradient(135deg, var(--green-mid), var(--pink-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.profile-avatar:hover,
+.avatar-placeholder:hover {
+  box-shadow: 0 0 0 4px var(--pink-mid);
+  transform: scale(1.05);
+}
+
+.hero-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 0;
+}
+
+.hero-nim {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  background: var(--green-light);
+  display: inline-block;
+  padding: 2px 14px;
+  border-radius: 50px;
+}
+
+.hero-bio {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-top: 4px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* SKILL TAGS */
+.skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.skill-tag {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 50px;
+  border: 1.5px solid transparent;
+  transition: all 0.2s;
+}
+
+.skill-tag:nth-child(odd)  { background: var(--green-light); color: var(--green-deeper); border-color: var(--green-mid); }
+.skill-tag:nth-child(even) { background: var(--pink-light);  color: var(--pink-deeper);  border-color: var(--pink-mid); }
+
+.skill-tag:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(40,180,122,0.2); }
+.skill-tag:nth-child(even):hover { box-shadow: 0 6px 14px rgba(232,95,160,0.2); }
+
+/* HARAPAN LIST */
+.harapan-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+.harapan-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(to right, #f5fdf9, #fff8fb);
+  border-left: 3px solid var(--green-mid);
+  transition: all 0.2s;
+}
+
+.harapan-list li:nth-child(even) { border-left-color: var(--pink-mid); background: linear-gradient(to right, #fff8fb, #f5fdf9); }
+.harapan-list li:hover { transform: translateX(4px); }
+
+.harapan-dot {
+  flex-shrink: 0;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--green-dark);
+  margin-top: 6px;
+}
+
+.harapan-list li:nth-child(even) .harapan-dot { background: var(--pink-dark); }
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  .two-col { grid-template-columns: 1fr; }
+  .hero-card { padding: 28px 16px; }
+  .skill-tags { justify-content: center; }
+}

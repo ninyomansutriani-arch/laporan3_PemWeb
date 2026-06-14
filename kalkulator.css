@@ -1,0 +1,225 @@
+/* kalkulator.css - Halaman Kalkulator Nilai
+   Nama: Ni Nyoman Sutriani | NIM: 202432037 */
+
+/* Header */
+.kalk-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.kalk-header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.kalk-header p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* Bobot — full width, di luar card */
+.bobot-penilaian {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.bobot-item {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 12px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.bobot-item:nth-child(1) { border-top: 3px solid var(--green-dark); }
+.bobot-item:nth-child(2) { border-top: 3px solid var(--pink-dark); }
+.bobot-item:nth-child(3) { border-top: 3px solid var(--green-mid); }
+
+.bobot-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(40,180,122,0.15);
+}
+
+.bobot-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.bobot-pct {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.bobot-item:nth-child(1) .bobot-pct { color: var(--green-dark); }
+.bobot-item:nth-child(2) .bobot-pct { color: var(--pink-dark); }
+.bobot-item:nth-child(3) .bobot-pct { color: var(--green-deeper); }
+
+/* Split layout: form kiri, hasil kanan */
+.kalk-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin-bottom: 6px;
+}
+
+.form-group input[type="number"] {
+  width: 100%;
+  padding: 11px 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.form-group input[type="number"]:focus {
+  border-color: var(--green-mid);
+  box-shadow: 0 0 0 3px rgba(93,217,160,0.18);
+}
+
+.form-group input[type="number"]:hover {
+  border-color: var(--pink-mid);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Error */
+.error-msg {
+  display: none;
+  background: #fff0f5;
+  border: 1.5px solid var(--pink-mid);
+  border-radius: var(--radius-sm);
+  color: var(--pink-deeper);
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  gap: 8px;
+}
+
+.error-msg.show {
+  display: flex;
+  align-items: center;
+}
+
+/* Tombol Hitung */
+.btn-hitung {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-hitung:hover {
+  background: linear-gradient(135deg, var(--pink-dark), var(--pink-mid));
+  transform: translateY(-2px);
+}
+
+.btn-hitung:active {
+  transform: translateY(0);
+}
+
+/* Panel hasil (kanan) */
+.kalk-hasil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+}
+
+.hasil-section {
+  display: none;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.hasil-section.show {
+  display: block;
+}
+
+.hasil-placeholder {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.hasil-nilai-angka {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--green-dark), var(--pink-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hasil-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.grade-badge {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 12px 36px;
+  border-radius: var(--radius-md);
+  border: 2px solid;
+}
+
+.grade-A { background: linear-gradient(135deg, #d4fce8, #a8edca); color: #1a6b45; border-color: var(--green-mid); }
+.grade-B { background: linear-gradient(135deg, #d0f0ff, #9de0ff); color: #1a5f8a; border-color: #6dc8f5; }
+.grade-C { background: linear-gradient(135deg, #fff9d4, #ffe99a); color: #7a5c00; border-color: #ffd85e; }
+.grade-D { background: linear-gradient(135deg, #ffe8d0, #ffcba0); color: #8a3a00; border-color: #ffab6e; }
+.grade-E { background: linear-gradient(135deg, #ffd6e8, #ffb3d4); color: var(--pink-deeper); border-color: var(--pink-mid); }
+
+/* Animasi */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .kalk-split { grid-template-columns: 1fr; }
+  .bobot-pct  { font-size: 1.4rem; }
+  .hasil-nilai-angka { font-size: 2.8rem; }
+  .kalk-hasil { min-height: auto; }
+}
