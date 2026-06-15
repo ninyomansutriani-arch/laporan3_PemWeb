@@ -36,6 +36,23 @@ const hasilAngka      = document.getElementById('hasilAngka');
 const gradeBadge      = document.getElementById('gradeBadge');
 const hasilPlaceholder = document.getElementById('hasilPlaceholder');
 
+
+// Memastikan eksekusi hanya berjalan setelah seluruh button dan resource (CSS/Gambar) dimuat
+window.addEventListener('load', function() {
+    const toastElem = document.getElementById('welcomeToast');
+    
+    // Validasi eksistensi elemen untuk mencegah TypeError
+    if (toastElem) {
+        // Memicu animasi masuk (slide-in & fade-in)
+        toastElem.className = 'toast-visible';
+        
+        // Timer asinkron untuk menyembunyikan toast setelah durasi tertentu (contoh: 3000ms / 3 detik)
+        setTimeout(function() {
+            toastElem.className = 'toast-hidden';
+        }, 3000);
+    }
+});
+
 // Event Listener Tombol Hitung
 btnHitung.addEventListener('click', function () {
   const rawTugas = inputTugas.value.trim();
