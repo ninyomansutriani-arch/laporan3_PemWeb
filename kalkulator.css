@@ -7,7 +7,7 @@
   margin-bottom: 20px;
 }
 /* Arsitektur Visual Toast Notification */
-#welcomeToast {
+.welcomeToast {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -22,13 +22,6 @@
   
   /* Parameter Animasi Transisi */
   transition: opacity 0.5s ease-in-out, transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-
-/* State DOM: Tersembunyi */
-.toast-hidden {
-  opacity: 0;
-  transform: translateX(100px); 
-  pointer-events: none;
 }
 
 .kalk-header p {
