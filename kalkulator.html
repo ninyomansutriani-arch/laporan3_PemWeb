@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Nama: Ni Nyoman Sutriani | NIM: 202432037 -->
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -9,12 +8,7 @@
   <link rel="stylesheet" href="kalkulator.css" />
 </head>
 <body>
-</div>
-  <div id="welcomeToast" class="toast-hidden">
-    Selamat datang! Silakan hitung nilai akhir Anda.
-  </div>
   
-  <!-- NAVBAR -->
   <nav>
     <span class="nav-brand">My Portofolio</span>
     <ul class="nav-links">
@@ -23,10 +17,8 @@
     </ul>
   </nav>
 
-  <!-- KONTEN UTAMA -->
   <div class="container">
 
-    <!-- Header -->
     <div class="kalk-header">
       <h1>Kalkulator Nilai Akhir</h1>
       <p>Masukkan tiga komponen nilai untuk menghitung nilai akhir dan grade.</p>
@@ -47,11 +39,8 @@
       </div>
     </div>
 
-
     <div class="kalk-split">
-      <!-- Kiri: Form -->
       <div class="card kalk-form">
-        <!-- Error Message -->
         <div class="error-msg" id="errorMsg">
           <span>ERROR:</span>
           <span id="errorText"></span>
@@ -75,7 +64,6 @@
         <button class="btn-hitung" id="btnHitung">Hitung</button>
       </div>
 
-      <!-- Kanan: Hasil -->
       <div class="card kalk-hasil">
         <div class="hasil-section" id="hasilSection">
           <div class="hasil-label">Nilai Akhir</div>
@@ -87,11 +75,12 @@
           <span>Hasil akan muncul<br>setelah kamu klik<br><strong>Hitung</strong></span>
         </div>
       </div>
-
     </div>
-    
-  
-  <!--Perhitungan nilai akhir dilakukan di kalkulator.js-->
+
+  </div> <div id="welcomeToast" class="toast-hidden">
+    Selamat datang! Silakan hitung nilai akhir Anda.
+  </div>
+
   <script src="kalkulator.js"></script>
 </body>
 </html>
