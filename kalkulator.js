@@ -37,19 +37,27 @@ const gradeBadge      = document.getElementById('gradeBadge');
 const hasilPlaceholder = document.getElementById('hasilPlaceholder');
 
 
-// Memastikan eksekusi hanya berjalan setelah seluruh button dan resource (CSS/Gambar) dimuat
 window.addEventListener('load', function() {
-    const toastElem = document.getElementById('welcomeToast');
+    const banner = document.getElementById('welcomeBanner');
     
-    // Validasi eksistensi elemen untuk mencegah TypeError
-    if (toastElem) {
-        // Memicu animasi masuk (slide-in & fade-in)
-        toastElem.className = 'toast-visible';
+    if (banner) {
+        // 1. Munculkan elemen ke dalam alur dokumen
+        banner.classList.add('muncul');
         
-        // Timer asinkron untuk menyembunyikan toast setelah durasi tertentu (contoh: 3000ms / 3 detik)
-        setTimeout(function() {
-            toastElem.className = 'toast-hidden';
-        }, 3000);
+        // 2. Beri jeda sangat singkat agar browser merender display:block sebelum memulai transisi opacity
+        setTimeout(() => {
+            banner.classList.add('animasi-masuk');
+        }, 50);
+        
+        // 3. Hilangkan otomatis setelah 4 detik (4000 ms)
+        setTimeout(() => {
+            banner.classList.remove('animasi-masuk'); // Mulai fade-out
+            
+            // Hapus ruangnya dari halaman setelah animasi fade-out selesai
+            setTimeout(() => {
+                banner.classList.remove('muncul');
+            }, 500); 
+        }, 4000);
     }
 });
 
