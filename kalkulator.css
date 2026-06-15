@@ -31,21 +31,39 @@
   pointer-events: none;
 }
 
-/* State DOM: Terlihat */
-.toast-visible {
-  opacity: 1;
-  transform: translateX(0); 
-}
-
-.kalk-header h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
 .kalk-header p {
   font-size: 0.88rem;
   color: var(--text-muted);
+}
+
+/* Arsitektur untuk Welcome Banner */
+.welcome-banner {
+  background-color: #eafaf1; 
+  color: var(--green-dark, #1a6b45); 
+  border: 1px solid #bcead5;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm, 8px);
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  
+  /* State Awal untuk JavaScript */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: none; 
+}
+
+/* State DOM saat aktif */
+.welcome-banner.muncul {
+  display: block;
+}
+
+/* Animasi masuk transisi */
+.welcome-banner.animasi-masuk {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Bobot — full width, di luar card */
